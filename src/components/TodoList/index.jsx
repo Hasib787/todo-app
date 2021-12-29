@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const TodoList = () => {
-    return (
-        <div>
-            <h2>Todo List page</h2>
-        </div>
-    );
+  return (
+    <div className="todo-container">
+      <ul className="todo-list"></ul>
+    </div>
+  );
 };
 
 export default TodoList;
