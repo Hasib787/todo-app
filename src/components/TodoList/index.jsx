@@ -1,6 +1,7 @@
 import React from "react";
+import Todo from "../Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setTodos }) => {
   return (
     <div className="todo-container">
       <ul className="todo-list">
@@ -8,11 +9,13 @@ const TodoList = ({ todos }) => {
           .slice(0)
           .reverse()
           .map((todo) => (
-            <div className="todo">
-              <li className="todo-item">{todo.text}</li>
-              <button className="complete-btn"><i className="fas fa-edit"></i></button>
-              <button className="trash-btn"><i className="fas fa-trash"></i></button>
-            </div>
+            <Todo
+              key={todo.id}
+              setTodos={setTodos} 
+              todos={todos}
+              text={todo.text}
+              todo={todo}
+            />
           ))}
       </ul>
     </div>

@@ -13,7 +13,6 @@ const Form = ({ inputText, setInputText, setTodos }) => {
         id: Math.floor(Math.random() * 100),
         text: inputText,
         dateTime: new Date().toLocaleString(),
-        completed: false,
       };
       setTodos((prevTodos) => {
         return [...prevTodos, newTodo];

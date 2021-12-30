@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <Form inputText={inputText}  setTodos={setTodos} setInputText={setInputText} />
-      <TodoList todos={todos} inputText={inputText} />
+      <TodoList  setTodos={setTodos} todos={todos} />
     </div>
   );
 };
