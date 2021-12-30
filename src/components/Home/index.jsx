@@ -7,8 +7,8 @@ const Home = () => {
   const [todos, setTodos] = useState([]);
   return (
     <div>
-      <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} />
-      <TodoList inputText={inputText} />
+      <Form inputText={inputText}  setTodos={setTodos} setInputText={setInputText} />
+      <TodoList todos={todos} inputText={inputText} />
     </div>
   );
 };

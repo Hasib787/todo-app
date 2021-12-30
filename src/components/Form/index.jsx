@@ -1,27 +1,36 @@
 import React from "react";
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, setTodos }) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };
-  console.log(inputText);
-  const addItemHandler = (e) => {
+
+  //add item according to the current date and time
+  const addItem = (e) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      {
-        text: inputText,
-        isCompleted: false,
+    if (inputText.trim()) {
+      const newTodo = {
         id: Math.floor(Math.random() * 100),
-      },
-    ]);
-    setInputText("");
+        text: inputText,
+        dateTime: new Date().toLocaleString(),
+        completed: false,
+      };
+      setTodos((prevTodos) => {
+        return [...prevTodos, newTodo];
+      });
+      setInputText("");
+    }
   };
 
   return (
     <form>
-      <input onChange={inputTextHandler} type="text" className="todo-input" />
-      <button onClick={addItemHandler} className="todo-button" type="submit">
+      <input
+        value={inputText}
+        onChange={inputTextHandler}
+        type="text"
+        className="todo-input"
+      />
+      <button onClick={addItem} className="todo-button" type="submit">
         Add Item
       </button>
     </form>
