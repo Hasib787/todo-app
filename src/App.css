@@ -61,9 +61,6 @@ form button:hover {
 .filter-todo {
   padding: 1rem;
 }
-.todo li {
-  flex: 1;
-}
 
 .trash-btn,
 .edit-btn {
@@ -79,12 +76,13 @@ form button:hover {
   background: rgb(11, 212, 162);
 }
 .edit-btn:hover {
-  background: rgb(19, 179, 139); 
+  background: rgb(19, 179, 139);
 }
-.trash-btn:hover{
-  background: #e94416; 
+.trash-btn:hover {
+  background: #e94416;
 }
 .todo-item {
+  flex: 1;
   padding: 0rem 0.5rem;
 }
 
@@ -102,9 +100,15 @@ form button:hover {
   text-decoration: line-through;
   opacity: 0.5;
 }
-.edit-input{
-  padding: 0.3rem;
+.edit-input {
+  padding: 0.3rem 0.93rem;
   font-size: 2rem;
+}
+.todo-dateTime {
+  flex: none;
+  font-size: 0.7rem;
+  margin: 0 0 1.3rem 10rem;
+  padding-right: 8px;
 }
 
 /*CUSTOM SELECTOR */

@@ -7,11 +7,10 @@ const Todo = ({ todo, text, todos, setTodos }) => {
 
   //edit item
   const editItem = () => {
-    let newEditItem = todos.find((item) => item.id === todo.id);
+    todos.find((item) => item.id === todo.id);
     setToggleSubmit(false);
     setNewText(text);
     setIsEditItem(todo.id);
-    console.log("new edit item", newEditItem);
   };
 
   //submit new edit item
@@ -27,17 +26,18 @@ const Todo = ({ todo, text, todos, setTodos }) => {
       );
     }
     setToggleSubmit(true);
-    isEditItem();
   };
 
   const deleteItemHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
+
   return (
     <>
       {toggleSubmit ? (
         <div className="todo">
           <li className="todo-item">{text}</li>
+          <li className="todo-dateTime">{todo.dateTime}</li>
           <button onClick={editItem} className="edit-btn">
             <i className="fas fa-edit"></i>
           </button>
