@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ todo, text, todos, setTodos, inputText }) => {
+const Todo = ({ todo, text, todos, setTodos }) => {
   const [toggleSubmit, setToggleSubmit] = useState(true);
   const [newText, setNewText] = useState("");
   const [isEditItem, setIsEditItem] = useState(null);
@@ -54,7 +54,7 @@ const Todo = ({ todo, text, todos, setTodos, inputText }) => {
             onChange={(e) => setNewText(e.target.value)}
           />
           <button onClick={submitEditItem} type="submit" className="edit-btn">
-            <i className="fas fa-edit"></i>
+            <i className="fas fa-check"></i>
           </button>
         </div>
       )}

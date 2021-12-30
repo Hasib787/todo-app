@@ -15,7 +15,6 @@ const TodoList = ({ todos, setTodos, inputText }) => {
               todos={todos}
               text={todo.text}
               todo={todo}
-              inputText={inputText}
             />
           ))}
       </ul>
